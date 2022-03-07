@@ -6,3 +6,4 @@ A starter project for DkIT students on the Server-Side module.
 * Move the PHP files in to your htdocs folder so Apache can process the PHP code
 * Configure the database.php file to connect to your SQL database
 
+"# ca2-davidmccabe-php" 
