@@ -1,14 +1,14 @@
 <?php
 require('database.php');
 
-$record_id = filter_input(INPUT_POST, 'record_id', FILTER_VALIDATE_INT);
+$recruit_id = filter_input(INPUT_POST, 'recruit_id', FILTER_VALIDATE_INT);
 $query = 'SELECT *
-          FROM records
-          WHERE recordID = :record_id';
+          FROM recruits
+          WHERE recruitID = :recruit_id';
 $statement = $db->prepare($query);
-$statement->bindValue(':record_id', $record_id);
+$statement->bindValue(':recruit_id', $recruit_id);
 $statement->execute();
-$records = $statement->fetch(PDO::FETCH_ASSOC);
+$recruits = $statement->fetch(PDO::FETCH_ASSOC);
 $statement->closeCursor();
 ?>
 <!-- the head section -->
@@ -16,33 +16,41 @@ $statement->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-        <h1>Edit Product</h1>
+        <h1>Edit Recruit</h1>
         <form action="edit_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
-            <input type="hidden" name="original_image" value="<?php echo $records['image']; ?>" />
+            <input type="hidden" name="original_image" value="<?php echo $recruits['image']; ?>" />
             <input type="hidden" name="record_id"
-                   value="<?php echo $records['recordID']; ?>">
+                   value="<?php echo $recruits['recruitID']; ?>">
 
             <label>Category ID:</label>
             <input type="category_id" name="category_id"
-                   value="<?php echo $records['categoryID']; ?>">
+                   value="<?php echo $recruits['categoryID']; ?>">
             <br>
 
-            <label>Name:</label>
+            <label>Recruit Name:</label>
             <input type="input" name="name"
-                   value="<?php echo $records['name']; ?>">
+                   value="<?php echo $recruits['recruitName']; ?>">
             <br>
 
-            <label>List Price:</label>
+            <label>Recruit Job:</label>
             <input type="input" name="price"
-                   value="<?php echo $records['price']; ?>">
+                   value="<?php echo $recruits['price']; ?>">
+            <br>
+            <label>Date of Registration:</label>
+            <input type="input" name="price"
+                   value="<?php echo $recruits['dateOfReg']; ?>">
+            <br>
+            <label>Blood Type:</label>
+            <input type="input" name="price"
+                   value="<?php echo $recruits['bloodType']; ?>">
             <br>
 
             <label>Image:</label>
             <input type="file" name="image" accept="image/*" />
             <br>            
-            <?php if ($records['image'] != "") { ?>
-            <p><img src="image_uploads/<?php echo $records['image']; ?>" height="150" /></p>
+            <?php if ($recruits['image'] != "") { ?>
+            <p><img src="image_uploads/<?php echo $recruits['image']; ?>" height="150" /></p>
             <?php } ?>
             
             <label>&nbsp;</label>

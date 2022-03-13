@@ -62,7 +62,7 @@ if ($category_id == null || $category_id == false ||
     require_once('database.php');
 
     // Add the product to the database 
-    $query = "INSERT INTO records
+    $query = "INSERT INTO recruits
                  (categoryID, name, price, image)
               VALUES
                  (:category_id, :name, :price, :image)";

@@ -1,6 +1,9 @@
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="main.css" />
 <?php
 require_once('database.php');
-
+error_reporting(E_ERROR | E_PARSE);
 // Get category ID
 if (!isset($category_id)) {
     $category_id = filter_input(
@@ -31,22 +34,23 @@ $statement2->execute();
 $categories = $statement2->fetchAll();
 $statement2->closeCursor();
 
-// Get records for selected category
-$queryRecords = "SELECT * FROM records
+// Get recruits for selected category
+$queryrecruits = "SELECT * FROM recruits
 WHERE categoryID = :category_id
-ORDER BY recordID";
-$statement3 = $db->prepare($queryRecords);
+ORDER BY recruitID";
+$statement3 = $db->prepare($queryrecruits);
 $statement3->bindValue(':category_id', $category_id);
 $statement3->execute();
-$records = $statement3->fetchAll();
+$recruits = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <div class="container">
+
+
+    <h1>recruit List</h1>
     <?php
     include('includes/header.php');
     ?>
-    <h1>Record List</h1>
-
     <aside>
         <!-- display a list of categories -->
         <h2>Categories</h2>
@@ -63,7 +67,7 @@ $statement3->closeCursor();
     </aside>
 
     <section>
-        <!-- display a table of records -->
+        <!-- display a table of recruits -->
 
 
         <div class="container">
@@ -73,35 +77,37 @@ $statement3->closeCursor();
                         <thead>
                             <tr>
                                 <th scope="col">Image</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Delete</th>
-                                <th scope="col">Edit</th>
+                                <th scope="col">Recruit Name</th>
+                                <th scope="col">Job</th>
+                                <th scope="col">Date Of Registration</th>
+                                <th scope="col">bloodType</th>
                             </tr>
                         </thead>
-                        <?php foreach ($records as $record) : ?>
+                        <?php foreach ($recruits as $recruit) : ?>
                             <tbody>
                                 <tr>
-                                    <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
-                                    <td><?php echo $record['name']; ?></td>
-                                    <td class="right"><?php echo $record['price']; ?></td>
+                                    <td><img src="image_uploads/<?php echo $recruit['image']; ?>" width="100px" height="100px" /></td>
+                                    <td><?php echo $recruit['recruitName']; ?></td>
+                                    <td class="right"><?php echo $recruit['job']; ?></td>
+                                    <td class="right"><?php echo $recruit['dateOfReg']; ?></td>
+                                    <td class="right"><?php echo $recruit['bloodType']; ?></td>
                                     <td>
                                         <form action="delete_record.php" method="post" id="delete_record_form">
-                                            <input type="hidden" name="record_id" value="<?php echo $record['recordID']; ?>">
-                                            <input type="hidden" name="category_id" value="<?php echo $record['categoryID']; ?>">
+                                            <input type="hidden" name="record_id" value="<?php echo $recruit['recordID']; ?>">
+                                            <input type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
                                             <input type="submit" value="Delete">
                                         </form>
                                     </td>
                                     <td>
                                         <form action="edit_record_form.php" method="post" id="delete_record_form">
-                                            <input type="hidden" name="record_id" value="<?php echo $record['recordID']; ?>">
-                                            <input type="hidden" name="category_id" value="<?php echo $record['categoryID']; ?>">
+                                            <input type="hidden" name="record_id" value="<?php echo $recruit['recordID']; ?>">
+                                            <input type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
                                             <input type="submit" value="Edit">
                                         </form>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
-                            <p><a href="add_record_form.php">Add Record</a></p>
+                            <p><a href="add_record_form.php">Add recruit</a></p>
                             <p><a href="category_list.php">Manage Categories</a></p>
                             </tbody>
                     </table>
