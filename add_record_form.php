@@ -17,7 +17,7 @@ include('includes/header.php');
         <form action="add_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
 
-            <label>Category:</label>
+              <label>Category:</label>
             <select name="category_id">
             <?php foreach ($categories as $category) : ?>
                 <option value="<?php echo $category['categoryID']; ?>">
@@ -31,16 +31,18 @@ include('includes/header.php');
             <br>
 
             <label>Job:</label>
-            <input type="input" name="price">
+            <input type="input" name="job">
             <br>        
             
-            <label>Date Of Registration:</label>
-            <input type="input" name="price">
-            <br>
-            <label>Blood Type:</label>
-            <input type="input" name="price">
-            <br>
-            <label>Recruit Image:</label>
+            <label>Date of Registration:</label>
+            <input type="date" name="dateOfReg">
+            <br>       
+
+            <label>BloodType:</label>
+            <input type="input" name="bloodType">
+            <br> 
+
+            <label>Image:</label>
             <input type="file" name="image" accept="image/*" />
             <br>
             

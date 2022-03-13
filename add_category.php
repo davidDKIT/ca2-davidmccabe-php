@@ -14,7 +14,7 @@ if ($name == null) {
 
     // Add the product to the database
     $query = "INSERT INTO categories (categoryName)
-              VALUES (:name)";
+              VALUES (:categoryName)";
     $statement = $db->prepare($query);
     $statement->bindValue(':categoryName', $name);
     $statement->execute();
