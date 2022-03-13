@@ -36,6 +36,8 @@ DROP TABLE IF EXISTS `recruits`;
 CREATE TABLE `categories` (
   `categoryID` int(11) NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(255) NOT NULL,
+  `parentID` int(11), -- To detect if category is Main/Sub. How? "Null" if Main, "main category" id if child
+  `emblem` varchar(50),
   PRIMARY KEY (categoryID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -43,12 +45,12 @@ CREATE TABLE `categories` (
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
-(1, 'Infantry'),
-(2, 'Airfoce'),
-(3, 'Tank Crew'),
-(4, 'Bombers'),
-(5, 'Sniper Team');
+INSERT INTO `categories` (`categoryID`, `categoryName`, `parentID`, `emblem`) VALUES
+(1, 'Infantry', NULL, 'recruit.jpg'),
+(2, 'Airfoce', 1, 'recruit.jpg'),
+(3, 'Tank Crew', 1, 'recruit.jpg'),
+(4, 'Bombers', 1, 'recruit.jpg'),
+(5, 'Sniper Team', 1, 'recruit.jpg');
 
 -- --------------------------------------------------------
 
@@ -74,21 +76,21 @@ ALTER TABLE `recruits` AUTO_INCREMENT = 1000;
 --
 
 INSERT INTO `recruits` (`recruitID`, `recruitName`,`categoryID`, `job`, `dateOfReg`, `image`, `bloodType`) VALUES
-(1,'Olexiy Havrylyuk', 1, 'Field Artillery Officer', '2022-01-01', NULL, "A"),
-(2, 'Oleksandr Sobol', 3, 'Combat Engineer', '2022-01-01', NULL, "B"),
-(3, 'Sofron Sokolov', 3, 'Combat Engineer', '2022-01-05', NULL, "O Positive"),
-(4, 'Valery Zelenko', 2,'Soldeir', '2022-01-07', NULL, "O"),
-(5, 'Nil Borisov', 1, 'Field Artillery Officer', '2022-01-09', NULL, "O"),
-(6, 'Nazar Zyma', 3, 'Combat Engineer', '2022-01-09', NULL, "O"),
-(7, 'Erast Vasylyk', 3,'Combat Engineer', '2022-01-09', NULL, "O Positive"),
-(8, 'Pavlo Bondarenko', 1, 'Field Artillery Officer', '2022-01-11', NULL, "O Positive"),
-(9, 'Martyn Sokolov', 4, 'Wheeled Vehicle Mechanic', '2022-01-14', NULL, "O Positive"),
-(10, 'Valeriy Kovalchuk', 4, 'Wheeled Vehicle Mechanic', '2022-01-14', NULL, "O"),
-(11, 'Yevhen Chayka', 5, 'Marksman Sniper', '2022-01-17', NULL, "O"),
-(12, 'Tymofiy Baran', 2, 'Soldeir', '2022-01-01', NULL, "A"),
-(13, 'Stanislav Kravchenko', 2, 'Soldeir', '2022-01-01', NULL, "O Positive"),
-(14, 'Markiyan Holub', 5, 'Marksman Sniper', '2022-01-01', NULL, "O Positive"),
-(15, 'Heorhiy Shevchuk', 5, 'Marksman Sniper', '2022-01-28', NULL, "O")
+(NULL,'Olexiy Havrylyuk', 1, 'Field Artillery Officer', '2022-01-01', NULL, "A"),
+(NULL, 'Oleksandr Sobol', 3, 'Combat Engineer', '2022-01-01', NULL, "B"),
+(NULL, 'Sofron Sokolov', 3, 'Combat Engineer', '2022-01-05', NULL, "O Positive"),
+(NULL, 'Valery Zelenko', 2,'Soldeir', '2022-01-07', NULL, "O"),
+(NULL, 'Nil Borisov', 1, 'Field Artillery Officer', '2022-01-09', NULL, "O"),
+(NULL, 'Nazar Zyma', 3, 'Combat Engineer', '2022-01-09', NULL, "O"),
+(NULL, 'Erast Vasylyk', 3,'Combat Engineer', '2022-01-09', NULL, "O Positive"),
+(NULL, 'Pavlo Bondarenko', 1, 'Field Artillery Officer', '2022-01-11', NULL, "O Positive"),
+(NULL, 'Martyn Sokolov', 4, 'Wheeled Vehicle Mechanic', '2022-01-14', NULL, "O Positive"),
+(NULL, 'Valeriy Kovalchuk', 4, 'Wheeled Vehicle Mechanic', '2022-01-14', NULL, "O"),
+(NULL, 'Yevhen Chayka', 5, 'Marksman Sniper', '2022-01-17', NULL, "O"),
+(NULL, 'Tymofiy Baran', 2, 'Soldeir', '2022-01-01', NULL, "A"),
+(NULL, 'Stanislav Kravchenko', 2, 'Soldeir', '2022-01-01', NULL, "O Positive"),
+(NULL, 'Markiyan Holub', 5, 'Marksman Sniper', '2022-01-01', NULL, "O Positive"),
+(NULL, 'Heorhiy Shevchuk', 5, 'Marksman Sniper', '2022-01-28', NULL, "O")
 ;
 
 --
