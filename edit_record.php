@@ -3,12 +3,12 @@
 // Get the recruit data
 $recruit_id = filter_input(INPUT_POST, 'recruit_id', FILTER_VALIDATE_INT);
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-$name = filter_input(INPUT_POST, 'recruitName');
+$recruitName = filter_input(INPUT_POST, 'recruitName');
 $job = filter_input(INPUT_POST, 'job');
 
 // Validate inputs
 if ($recruit_id == NULL || $recruit_id == FALSE || $category_id == NULL ||
-$category_id == FALSE || empty($name) ||
+$category_id == FALSE || empty($recruitName) ||
 $job == NULL || $job == FALSE) {
 $error = "Invalid recruit data. Check all fields and try again.";
 include('error.php');
@@ -16,7 +16,7 @@ include('error.php');
 
 /**************************** Image upload ****************************/
 
-$imgFile = $_FILES['image']['recruitName'];
+$imgFile = $_FILES['image']['name'];
 $tmp_dir = $_FILES['image']['tmp_name'];
 $imgSize = $_FILES['image']['size'];
 $original_image = filter_input(INPUT_POST, 'original_image');
@@ -56,7 +56,7 @@ image = :image
 WHERE recruitID = :recruit_id';
 $statement = $db->prepare($query);
 $statement->bindValue(':category_id', $category_id);
-$statement->bindValue(':name', $name);
+$statement->bindValue(':recruitName', $recruitName);
 $statement->bindValue(':job', $job);
 $statement->bindValue(':image', $image);
 $statement->bindValue(':recruit_id', $recruit_id);

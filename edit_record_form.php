@@ -1,12 +1,12 @@
 <?php
 require('database.php');
 
-$record_id = filter_input(INPUT_POST, 'record_id', FILTER_VALIDATE_INT);
+$record_id = filter_input(INPUT_POST, 'recruit_id', FILTER_VALIDATE_INT);
 $query = 'SELECT *
           FROM recruits
-          WHERE recruitID = :record_id';
+          WHERE recruitID = :recruit_id';
 $statement = $db->prepare($query);
-$statement->bindValue(':record_id', $record_id);
+$statement->bindValue(':recruit_id', $record_id);
 $statement->execute();
 $records = $statement->fetch(PDO::FETCH_ASSOC);
 $statement->closeCursor();
@@ -21,7 +21,7 @@ include('includes/header.php');
               id="add_record_form">
             <input type="hidden" name="original_image" value="<?php echo $records['image']; ?>" />
             <input type="hidden" name="record_id"
-                   value="<?php echo $records['recordID']; ?>">
+                   value="<?php echo $records['recruitID']; ?>">
 
             <label>Category ID:</label>
             <input type="category_id" name="category_id"
