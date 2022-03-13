@@ -2,12 +2,14 @@
 
 // Get the product data
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-$name = filter_input(INPUT_POST, 'name');
-$price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
+$recruitName = filter_input(INPUT_POST, 'recruitName');
+$job = filter_input(INPUT_POST, 'job');
+$dateOfReg = filter_input(INPUT_POST, 'dateOfReg');
+$bloodType = filter_input(INPUT_POST, 'bloodType');
 
 // Validate inputs
 if ($category_id == null || $category_id == false ||
-    $name == null || $price == null || $price == false ) {
+    $recruitName == null || $job == null || $dateOfReg == false  || $bloodType == false) {
     $error = "Invalid product data. Check all fields and try again.";
     include('error.php');
     exit();
@@ -63,13 +65,15 @@ if ($category_id == null || $category_id == false ||
 
     // Add the product to the database 
     $query = "INSERT INTO recruits
-                 (categoryID, name, price, image)
+                 (categoryID, recruitName, job, dateOfReg, bloodType, image)
               VALUES
-                 (:category_id, :name, :price, :image)";
+                 (:category_id, :recruitName, :job, dateOfReg, bloodType, :image)";
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
-    $statement->bindValue(':name', $name);
-    $statement->bindValue(':price', $price);
+    $statement->bindValue(':recruitName', $recruitName);
+    $statement->bindValue(':job', $job);
+    $statement->bindValue(':dateOfReg', $dateOfReg);
+    $statement->bindValue(':bloodType', $bloodType);
     $statement->bindValue(':image', $image);
     $statement->execute();
     $statement->closeCursor();

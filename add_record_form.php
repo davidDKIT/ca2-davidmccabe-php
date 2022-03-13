@@ -13,7 +13,7 @@ $statement->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-        <h1>Add Record</h1>
+        <h1>Add Recruit</h1>
         <form action="add_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
 
@@ -26,20 +26,26 @@ include('includes/header.php');
             <?php endforeach; ?>
             </select>
             <br>
-            <label>Name:</label>
+            <label>Recruit Name:</label>
             <input type="input" name="name">
             <br>
 
-            <label>List Price:</label>
+            <label>Job:</label>
             <input type="input" name="price">
             <br>        
             
-            <label>Image:</label>
+            <label>Date Of Registration:</label>
+            <input type="input" name="price">
+            <br>
+            <label>Blood Type:</label>
+            <input type="input" name="price">
+            <br>
+            <label>Recruit Image:</label>
             <input type="file" name="image" accept="image/*" />
             <br>
             
             <label>&nbsp;</label>
-            <input type="submit" value="Add Record">
+            <input type="submit" value="Add Recruit">
             <br>
         </form>
         <p><a href="index.php">View Homepage</a></p>

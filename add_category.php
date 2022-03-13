@@ -16,7 +16,7 @@ if ($name == null) {
     $query = "INSERT INTO categories (categoryName)
               VALUES (:name)";
     $statement = $db->prepare($query);
-    $statement->bindValue(':name', $name);
+    $statement->bindValue(':categoryName', $name);
     $statement->execute();
     $statement->closeCursor();
 
