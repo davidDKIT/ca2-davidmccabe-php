@@ -5,11 +5,12 @@ $recruit_id = filter_input(INPUT_POST, 'recruit_id', FILTER_VALIDATE_INT);
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $recruitName = filter_input(INPUT_POST, 'recruitName');
 $job = filter_input(INPUT_POST, 'job');
-
+$dateOfReg = filter_input(INPUT_POST, 'dateOfReg', FILTER_VALIDATE_INT);
+$bloodType = filter_input(INPUT_POST, 'bloodType');
 // Validate inputs
 if ($recruit_id == NULL || $recruit_id == FALSE || $category_id == NULL ||
 $category_id == FALSE || empty($recruitName) ||
-$job == NULL || $job == FALSE) {
+$job == NULL || $dateOfReg == NULL || $dateOfReg == FALSE || $bloodType == FALSE) {
 $error = "Invalid recruit data. Check all fields and try again.";
 include('error.php');
 } else {
@@ -52,12 +53,16 @@ $query = 'UPDATE recruits
 SET categoryID = :category_id,
 recruitName = :recruitName,
 job = :job,
+dateOfReg = :dateOfReg,
+bloodType = :bloodType,
 image = :image
 WHERE recruitID = :recruit_id';
 $statement = $db->prepare($query);
 $statement->bindValue(':category_id', $category_id);
 $statement->bindValue(':recruitName', $recruitName);
 $statement->bindValue(':job', $job);
+$statement->bindValue(':dateOfReg', $dateOfReg);
+$statement->bindValue(':bloodType', $bloodType);
 $statement->bindValue(':image', $image);
 $statement->bindValue(':recruit_id', $recruit_id);
 $statement->execute();
