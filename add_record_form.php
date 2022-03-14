@@ -27,15 +27,15 @@ include('includes/header.php');
             </select>
             <br>
             <label>Recruit Name:</label>
-            <input type="input" name="name">
+            <input type="input" name="recruitName">
             <br>
 
             <label>Job:</label>
             <input type="input" name="job">
             <br>        
             
-            <label>Date of Registration:</label>
-            <input type="date" name="dateOfReg">
+            <label>Any military experience:</label>
+            <input type="input" name="militaryExp">
             <br>       
 
             <label>BloodType:</label>

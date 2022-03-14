@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="main.css" />
+
 <?php
 require_once('database.php');
 error_reporting(E_ERROR | E_PARSE);
@@ -47,23 +47,24 @@ $statement3->closeCursor();
 <div class="container">
 
 
-    <h1>recruit List</h1>
+    <h1>Recruit List</h1>
     <?php
     include('includes/header.php');
     ?>
     <aside>
         <!-- display a list of categories -->
         <h2>Categories</h2>
-        <nav>
+        <aside>
             <ul>
                 <?php foreach ($categories as $category) : ?>
-                    <li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
-                            <?php echo $category['categoryName']; ?>
+                    <li>
+                    <a class ="btn"  href=".?category_id=<?php echo $category['categoryID']; ?>">
+                    <?php echo $category['categoryName']; ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
             </ul>
-        </nav>
+        </aside>
     </aside>
 
     <section>
@@ -73,13 +74,13 @@ $statement3->closeCursor();
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <table class="table table-image">
+                    <table class="table-dark:hover">
                         <thead>
                             <tr>
                                 <th scope="col">Image</th>
                                 <th scope="col">Recruit Name</th>
                                 <th scope="col">Job</th>
-                                <th scope="col">Date Of Registration</th>
+                                <th scope="col">Any Military Experience</th>
                                 <th scope="col">bloodType</th>
                             </tr>
                         </thead>
@@ -89,26 +90,26 @@ $statement3->closeCursor();
                                     <td><img src="image_uploads/<?php echo $recruit['image']; ?>" width="100px" height="100px" /></td>
                                     <td><?php echo $recruit['recruitName']; ?></td>
                                     <td class="right"><?php echo $recruit['job']; ?></td>
-                                    <td class="right"><?php echo $recruit['dateOfReg']; ?></td>
+                                    <td class="right"><?php echo $recruit['militaryExp']; ?></td>
                                     <td class="right"><?php echo $recruit['bloodType']; ?></td>
                                     <td>
-                                        <form action="delete_record.php" method="post" id="delete_record_form">
-                                            <input type="hidden" name="record_id" value="<?php echo $recruit['recordID']; ?>">
-                                            <input type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
-                                            <input type="submit" value="Delete">
+                                        <form class="form-check" action="delete_record.php" method="post" id="delete_record_form">
+                                            <input class ="btn" type="hidden" name="record_id" value="<?php echo $recruit['recruitID']; ?>">
+                                            <input class ="btn" type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
+                                            <input class ="btn" type="submit" value="Delete">
                                         </form>
                                     </td>
                                     <td>
-                                        <form action="edit_record_form.php" method="post" id="delete_record_form">
-                                            <input type="hidden" name="record_id" value="<?php echo $recruit['recordID']; ?>">
-                                            <input type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
-                                            <input type="submit" value="Edit">
+                                        <form class="form-check" action="edit_record_form.php" method="post" id="delete_record_form">
+                                            <input class ="btn" type="hidden" name="record_id" value="<?php echo $recruit['recruitID']; ?>">
+                                            <input class ="btn"  type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
+                                            <input class ="btn"  type="submit" value="Edit">
                                         </form>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
-                            <p><a href="add_record_form.php">Add recruit</a></p>
-                            <p><a href="category_list.php">Manage Categories</a></p>
+                            <p><a class ="btn" href="add_record_form.php">Add recruit</a></p>
+                            <p><a class ="btn" href="category_list.php">Manage Categories</a></p>
                             </tbody>
                     </table>
                 </div>

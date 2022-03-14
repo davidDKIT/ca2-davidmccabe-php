@@ -14,7 +14,7 @@
     <div class="container">
         <div class="copy-container center-xy">
             <p>
-                404, page not found.
+                Incorrect details have been corrected, please try again.
             </p>
             <span class="handle"></span>
 
