@@ -40,7 +40,7 @@
           </li>
         </ul>
         <form class="d-flex" method="post">
-          <a href="add_record_form.php" class="navbar-brand">Sign Up</a>
+          <a href="add_record_form.php" class="btn">Sign Up</a>
         </form>
       
       </div>

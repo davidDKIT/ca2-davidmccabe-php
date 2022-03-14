@@ -38,9 +38,12 @@
             <a class="nav-link">Disabled</a>
           </li>
           </li>
+          <li class="nav-item">
+            <a class="nav-link">Disabled</a>
+          </li>
         </ul>
         <form class="d-flex" method="post">
-          <a href="add_record_form.php" class="navbar-brand">Sign Up</a>
+          <button href="add_record_form" class="btn" type="submit">Sign Up</button>
         </form>
       
       </div>

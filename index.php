@@ -74,7 +74,7 @@ $statement3->closeCursor();
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <table class="table-dark:hover">
+                    <table class="table-dark table-dark:hover">
                         <thead>
                             <tr>
                                 <th scope="col">Image</th>
