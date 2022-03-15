@@ -94,14 +94,14 @@ $statement3->closeCursor();
                                     <td class="right"><?php echo $recruit['bloodType']; ?></td>
                                     <td>
                                         <form class="form-check" action="delete_record.php" method="post" id="delete_record_form">
-                                            <input class ="btn" type="hidden" name="record_id" value="<?php echo $recruit['recruitID']; ?>">
+                                            <input class ="btn" type="hidden" name="recruit_id" value="<?php echo $recruit['recruitID']; ?>">
                                             <input class ="btn" type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
                                             <input class ="btn" type="submit" value="Delete">
                                         </form>
                                     </td>
                                     <td>
                                         <form class="form-check" action="edit_record_form.php" method="post" id="delete_record_form">
-                                            <input class ="btn" type="hidden" name="record_id" value="<?php echo $recruit['recruitID']; ?>">
+                                            <input class ="btn" type="hidden" name="recruit_id" value="<?php echo $recruit['recruitID']; ?>">
                                             <input class ="btn"  type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
                                             <input class ="btn"  type="submit" value="Edit">
                                         </form>
