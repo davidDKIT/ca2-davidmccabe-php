@@ -44,6 +44,14 @@ if (isset($_POST['submit'])) {
           <li class="nav-item">
             <a class="nav-link" href="add_record_form.php">Add New Recruit</a>
           </li>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+          <form class="d-flex" method="post" action = "search_recruit.php">
+            <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
+            <button class="btn btn-outline-dark" type="submit" name="submit">Search</button>
+          </form>
 
 
         </ul>

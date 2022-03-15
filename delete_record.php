@@ -2,7 +2,7 @@
 require_once('database.php');
 
 // Get IDs
-$recruit_id = filter_input(INPUT_POST, 'recruit_id', FILTER_VALIDATE_INT);
+$recruit_id = filter_input(INPUT_POST, 'recruitID', FILTER_VALIDATE_INT);
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 
 // Delete the product from the database

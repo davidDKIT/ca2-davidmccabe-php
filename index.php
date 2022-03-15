@@ -51,7 +51,7 @@ $statement3->closeCursor();
     ?>
     <!-- display a list of categories -->
     <div class="text-center">
-        <ul class = "list-group list-group-horizontal-sm">
+        <ul class="list-group list-group-horizontal-sm">
             <?php foreach ($categories as $category) : ?>
                 <li class="list-group-item">
                     <a class="btn btn-light" href=".?category_id=<?php echo $category['categoryID']; ?>">
@@ -115,7 +115,7 @@ $statement3->closeCursor();
                 </div>
             </div>
         </div>
-
+        <script src="validation.js"></script>
         <h2><?php echo $category_name; ?></h2>
         <?php
         include('includes/footer.php');
