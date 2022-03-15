@@ -112,8 +112,6 @@ $statement3->closeCursor();
                             </tbody>
 
                     </table>
-                    <p><a class="btn btn-dark" href="add_record_form.php">Add recruit</a></p>
-                    <p><a class="btn btn-dark" href="category_list.php">Manage Categories</a></p>
                 </div>
             </div>
         </div>

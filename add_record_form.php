@@ -16,7 +16,7 @@ $statement->closeCursor();
   <h1>Add Recruit</h1>
   
   <form action="add_record.php" method="post" enctype="multipart/form-data" id="add_record_form">
-  <p><a href="index.php">View Homepage</a></p>
+  <p><a class="btn btn-dark" href="index.php">View Homepage</a></p>
     <div class="form-group">
       <label for="exampleFormControlInput1">Category:</label>
       <select class="form-control" id="exampleFormControlInput1" name="category_id">
@@ -46,11 +46,11 @@ $statement->closeCursor();
         <option>no</option>
       </select>
       <label>Image:</label>
-      <input type="file" name="image" accept="image/*" />
+      <input class="btn btn-light" type="file" name="image" accept="image/*" />
       <br>
     </div>
     <label>&nbsp;</label>
-    <input type="submit" value="Add Recruit">
+    <input class="btn btn-dark" type="submit" value="Add Recruit">
     <br>
   </form>
   
