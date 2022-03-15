@@ -46,32 +46,29 @@ $statement3->closeCursor();
 ?>
 <div class="container">
 
-
-    <h1>Recruit List</h1>
     <?php
     include('includes/header.php');
     ?>
-    <aside>
-        <!-- display a list of categories -->
-        <h2>Categories</h2>
-        <aside>
-            <ul>
-                <?php foreach ($categories as $category) : ?>
-                    <li>
-                        <a class="btn" href=".?category_id=<?php echo $category['categoryID']; ?>">
-                            <?php echo $category['categoryName']; ?>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        </aside>
-    </aside>
+    <!-- display a list of categories -->
+    <div class="text-center">
+        <ul class = "list-group list-group-horizontal-sm">
+            <?php foreach ($categories as $category) : ?>
+                <li class="list-group-item">
+                    <a class="btn btn-light" href=".?category_id=<?php echo $category['categoryID']; ?>">
+                        <?php echo $category['categoryName']; ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+
 
     <section>
         <!-- display a table of recruits -->
 
 
-        <div class="container">
+        <div class="text-center">
             <div class="row">
                 <div class="col-12">
                     <table class="table caption-top">
@@ -97,24 +94,26 @@ $statement3->closeCursor();
                                     <td class="right"><?php echo $recruit['bloodType']; ?></td>
                                     <td>
                                         <form class="form-check" action="delete_record.php" method="post" id="delete_record_form">
-                                            <input class="btn" type="hidden" name="recruit_id" value="<?php echo $recruit['recruitID']; ?>">
-                                            <input class="btn" type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
-                                            <input class="btn" type="submit" value="Delete">
+                                            <input class="btn btn-dark" type="hidden" name="recruit_id" value="<?php echo $recruit['recruitID']; ?>">
+                                            <input class="btn btn-dark" type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
+                                            <input class="btn btn-dark" type="submit" value="Delete">
                                         </form>
                                     </td>
                                     <td>
                                         <form class="form-check" action="edit_record_form.php" method="post" id="delete_record_form">
-                                            <input class="btn" type="hidden" name="recruit_id" value="<?php echo $recruit['recruitID']; ?>">
-                                            <input class="btn" type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
-                                            <input class="btn" type="submit" value="Edit">
+                                            <input class="btn btn-dark" type="hidden" name="recruit_id" value="<?php echo $recruit['recruitID']; ?>">
+                                            <input class="btn btn-dark" type="hidden" name="category_id" value="<?php echo $recruit['categoryID']; ?>">
+                                            <input class="btn btn-dark" type="submit" value="Edit">
                                         </form>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
-                            <p><a class="btn" href="add_record_form.php">Add recruit</a></p>
-                            <p><a class="btn" href="category_list.php">Manage Categories</a></p>
+
                             </tbody>
+
                     </table>
+                    <p><a class="btn btn-dark" href="add_record_form.php">Add recruit</a></p>
+                    <p><a class="btn btn-dark" href="category_list.php">Manage Categories</a></p>
                 </div>
             </div>
         </div>

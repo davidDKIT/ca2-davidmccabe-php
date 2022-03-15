@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ca2`
+-- Database: `ukraine_signup`
 --
 
 -- --------------------------------------------------------
@@ -34,9 +34,8 @@ DROP TABLE IF EXISTS `categories`;
 DROP TABLE IF EXISTS `recruits`;
 
 CREATE TABLE `categories` (
-  `categoryID` int(11) NOT NULL AUTO_INCREMENT,
-  `categoryName` varchar(255) NOT NULL,
-  PRIMARY KEY (categoryID)
+  `categoryID` int(11) NOT NULL,
+  `categoryName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -57,39 +56,35 @@ INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
 --
 
 CREATE TABLE `recruits` (
-  `recruitID` int(11) NOT NULL primary key AUTO_INCREMENT,
+  `recruitID` int(11) NOT NULL,
   `recruitName` varchar(255),
   `categoryID` int(11) NOT NULL,
   `job` varchar(255),
   `militaryExp` varchar(50) NOT NULL,
   `image` varchar(255),
-  `bloodType` varchar(50) NOT NULL,
-  FOREIGN KEY (`categoryID`) REFERENCES categories(`categoryID`)
+  `bloodType` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-ALTER TABLE `recruits` AUTO_INCREMENT = 1000;
 
 --
 -- Dumping data for table `recruits`
 --
 
 INSERT INTO `recruits` (`recruitID`, `recruitName`,`categoryID`, `job`, `militaryExp`, `image`, `bloodType`) VALUES
-(1,'Olexiy Havrylyuk', 1, 'Field Artillery Officer', '2022-01-01', '4733.jpg', "A"),
-(2, 'Oleksandr Sobol', 3, 'Combat Engineer', '2022-01-01', '11537.jpg', "B"),
-(3, 'Sofron Sokolov', 3, 'Combat Engineer', '2022-01-05', '28893.jpg', "O Positive"),
-(4, 'Valery Zelenko', 2,'Soldeir', '2022-01-07', '119273.jpg', "O"),
-(5, 'Nil Borisov', 1, 'Field Artillery Officer', '2022-01-09', '233012.jpg', "O"),
-(6, 'Nazar Zyma', 3, 'Combat Engineer', '2022-01-09', '266531.jpg', "O"),
-(7, 'Erast Vasylyk', 3,'Combat Engineer', '2022-01-09', '329484.jpg', "O Positive"),
-(8, 'Pavlo Bondarenko', 1, 'Field Artillery Officer', '2022-01-11', '361782.jpg', "O Positive"),
-(9, 'Martyn Sokolov', 4, 'Wheeled Vehicle Mechanic', '2022-01-14', '373465.jpg', "O Positive"),
-(10, 'Valeriy Kovalchuk', 4, 'Wheeled Vehicle Mechanic', '2022-01-14', '373989.jpg', "O"),
-(11, 'Yevhen Chayka', 5, 'Marksman Sniper', '2022-01-17', '374104.jpg', "O"),
-(12, 'Tymofiy Baran', 2, 'Soldeir', '2022-01-01', '644055.jpg', "A"),
-(13, 'Stanislav Kravchenko', 2, 'Soldeir', '2022-01-01', '644471.jpg', "O Positive"),
-(14, 'Markiyan Holub', 5, 'Marksman Sniper', '2022-01-01', '834551.jpg', "O Positive"),
-(15, 'Heorhiy Shevchuk', 5, 'Marksman Sniper', '2022-01-28', '835545.jpg', "O")
-;
+(1,'Olexiy Havrylyuk', 1, 'Field Artillery Officer', 'YES', '4733.jpg', "A"),
+(2, 'Oleksandr Sobol', 3, 'Combat Engineer', 'YES', '11537.jpg', "B"),
+(3, 'Sofron Sokolov', 3, 'Combat Engineer', 'YES', '28893.jpg', "O Positive"),
+(4, 'Valery Zelenko', 2,'Soldeir', 'NO', '119273.jpg', "O"),
+(5, 'Nil Borisov', 1, 'Field Artillery Officer', 'NO', '233012.jpg', "O"),
+(6, 'Nazar Zyma', 3, 'Combat Engineer', 'NO', '266531.jpg', "O"),
+(7, 'Erast Vasylyk', 3,'Combat Engineer', 'NO', '329484.jpg', "O Positive"),
+(8, 'Pavlo Bondarenko', 1, 'Field Artillery Officer', 'YES', '361782.jpg', "O Positive"),
+(9, 'Martyn Sokolov', 4, 'Wheeled Vehicle Mechanic', 'NO', '373465.jpg', "O Positive"),
+(10, 'Valeriy Kovalchuk', 4, 'Wheeled Vehicle Mechanic', 'NO', '373989.jpg', "O"),
+(11, 'Yevhen Chayka', 5, 'Marksman Sniper', 'YES', '374104.jpg', "O"),
+(12, 'Tymofiy Baran', 2, 'Soldeir', 'YES', '644055.jpg', "A"),
+(13, 'Stanislav Kravchenko', 2, 'Soldeir', 'YES', '644471.jpg', "O Positive"),
+(14, 'Markiyan Holub', 5, 'Marksman Sniper', 'YES', '834551.jpg', "O Positive"),
+(15, 'Heorhiy Shevchuk', 5, 'Marksman Sniper', 'NO', '835545.jpg', "O");
 
 --
 -- Indexes for dumped tables
@@ -123,3 +118,7 @@ ALTER TABLE `categories`
 ALTER TABLE `recruits`
   MODIFY `recruitID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

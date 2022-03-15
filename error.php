@@ -1,8 +1,7 @@
 <!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="error.css"/>
 <html>
-<link rel="stylesheet" type="text/css" href="error.css" />
 <!-- the head section -->
-<script src="error.js"></script>
 
 <head>
     <title>Ministry Of Defense Ukraine</title>
@@ -11,13 +10,9 @@
 <!-- the body section -->
 
 <body>
-    <div class="container">
-        <div class="copy-container center-xy">
-            <p>
-                Incorrect details have been corrected, please try again.
-            </p>
-            <span class="handle"></span>
-
+    <div id="main">
+        <div class="fof">
+            <h1>Error 404</h1>
         </div>
     </div>
 
