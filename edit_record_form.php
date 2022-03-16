@@ -44,22 +44,29 @@ $statement->closeCursor();
               <br>
 
               <label for="exampleFormControlTextarea1">Recruit Name</label>
-              <input type="input" class="form-control" id="exampleFormControlTextarea1" name="recruitName" value="<?php echo $recruits['recruitName']; ?>">
+              <input type="input" class="form-control" id="exampleFormControlTextarea1" placeholder="Recruit Name" name="recruitName" value="<?php echo $recruits['recruitName']; ?>">
               <br>
 
               <label>Job:</label>
-              <input type="input" class="form-control" id="exampleFormControlTextarea1" name="job" value="<?php echo $recruits['job']; ?>">
+              <input type="input" class="form-control" id="exampleFormControlTextarea1" placeholder="Recruit Job" name="job" value="<?php echo $recruits['job']; ?>">
               <br>
               <label>Any Military Experience:</label>
-              <input type="input" class="form-control" id="exampleFormControlTextarea1" name="militaryExp" value="<?php echo $recruits['militaryExp']; ?>">
+              <select multiple class="form-control" id="exampleFormControlSelect2" name="militaryExp" value="<?php echo $recruits['militaryExp']; ?>">
+                     <option>yes</option>
+                     <option>no</option>
+              </select>
               <br>
-
               <label>Image:</label>
               <input type="file" class="form-control" id="exampleFormControlTextarea1" name="image" accept="image/*" />
               <br>
               <label>Blood Type Of Recruit:</label>
-              <input type="input" class="form-control" id="exampleFormControlTextarea1" name="bloodType" value="<?php echo $recruits['bloodType']; ?>">
-              <br>
+              <select multiple class="form-control" id="exampleFormControlSelect2" name="bloodType" value="<?php echo $recruits['bloodType']; ?>">
+                     <option>O</option>
+                     <option>O positive</option>
+                     <option>A</option>
+                     <option>B</option>
+                     <option>AB</option>
+              </select>
 
               <?php if ($recruits['image'] != "") { ?>
                      <p><img src="image_uploads/<?php echo $recruits['image']; ?>" height="150" /></p>

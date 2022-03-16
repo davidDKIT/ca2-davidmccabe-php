@@ -16,7 +16,7 @@ $statement->closeCursor();
   <h1>Add Recruit</h1>
   
   <form action="add_record.php" method="post" enctype="multipart/form-data" id="add_record_form">
-  <p><a class="btn btn-dark" href="index.php">View Homepage</a></p>
+  <!-- <p><a class="btn btn-dark" href="index.php">View Homepage</a></p> -->
     <div class="form-group">
       <label for="exampleFormControlInput1">Category:</label>
       <select class="form-control" id="exampleFormControlInput1" name="category_id">
@@ -29,9 +29,9 @@ $statement->closeCursor();
     </div>
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Recruit Name</label>
-      <input class="form-control" id="exampleFormControlTextarea1" name="recruitName" onBlur="recruitName_validation();"><span id="recruitName_err"></span></li>
+      <input class="form-control" id="exampleFormControlTextarea1" placeholder="Recruit Name" name="recruitName" onBlur="recruitName_validation();"><span id="recruitName_err"></span></li>
       <label for="exampleFormControlTextarea1">Job</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" name="job" rows="3"></textarea>
+      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Recruit Job" name="job" rows="3"></textarea>
       <label for="exampleFormControlSelect2">Blood Type:</label>
       <select multiple class="form-control" id="exampleFormControlSelect2" name="bloodType">
         <option>O</option>
