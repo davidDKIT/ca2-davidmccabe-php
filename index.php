@@ -79,7 +79,7 @@ $statement3->closeCursor();
                                 <th scope="col">Any Military Experience</th>
                                 <th scope="col">bloodType</th>
                                 <th scope="col">Delete</th>
-                                <th scope="col">Add</th>
+                                <th scope="col">Edit</th>
                             </tr>
                         </thead>
                         <?php foreach ($recruits as $recruit) : ?>

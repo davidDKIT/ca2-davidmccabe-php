@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
           <li class="nav-item">
             <a class="nav-link" href="add_record_form.php">Add New Recruit</a>
           </li>
-          <form class="form-inline my-2 my-lg-0" method = "post" action = "search_recruit.php">
+          <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>

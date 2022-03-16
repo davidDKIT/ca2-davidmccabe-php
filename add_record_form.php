@@ -29,7 +29,7 @@ $statement->closeCursor();
     </div>
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Recruit Name</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" name="recruitName" rows="3"></textarea>
+      <input class="form-control" id="exampleFormControlTextarea1" name="recruitName" onBlur="recruitName_validation();"><span id="recruitName_err"></span></li>
       <label for="exampleFormControlTextarea1">Job</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" name="job" rows="3"></textarea>
       <label for="exampleFormControlSelect2">Blood Type:</label>
@@ -50,6 +50,7 @@ $statement->closeCursor();
       <br>
     </div>
     <label>&nbsp;</label>
+    <a href="main.php"> <button class="btn btn-outline-danger">Cancel</button></a>
     <input class="btn btn-dark" type="submit" value="Add Recruit">
     <br>
   </form>
