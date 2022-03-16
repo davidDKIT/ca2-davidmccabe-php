@@ -3,9 +3,6 @@
 <html>
 <!-- the head section -->
 
-<head>
-    <title>Ministry Of Defense Ukraine</title>
-</head>
 
 <!-- the body section -->
 

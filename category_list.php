@@ -14,7 +14,16 @@
 <?php
 include('includes/header.php');
 ?>
-    <h1>Category List</h1>
+    
+    <form class="form-control" style = "text-align: center; display: inline-block" action="add_category.php" method="post"
+          id="add_category_form">
+          <p><a class="btn btn-dark" style = "text-align: center; display: inline-block"  href="index.php">Homepage</a></p>
+
+        <label>Name:</label>
+        <input type="input" name="name">
+        <input class="btn btn-dark" id="add_category_button" type="submit" value="Add">
+    </form>
+    <h2>Category List</h2>
     <table>
         <tr>
             <th>Name</th>
@@ -35,18 +44,7 @@ include('includes/header.php');
         <?php endforeach; ?>
     </table>
     <br>
-
-    <h2>Add Category</h2>
-    <form class="form-control" style = "text-align: center; display: inline-block" action="add_category.php" method="post"
-          id="add_category_form">
-
-        <label>Name:</label>
-        <input type="input" name="name">
-        <input class="btn btn-dark" id="add_category_button" type="submit" value="Add">
-    </form>
     <br>
-    <p><a class="btn btn-dark" style = "text-align: center; display: inline-block"  href="index.php">Homepage</a></p>
-
     <?php
 include('includes/footer.php');
 ?>

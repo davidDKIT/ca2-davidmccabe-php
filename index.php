@@ -62,8 +62,6 @@ $statement3->closeCursor();
         </ul>
     </div>
 
-
-
     <section>
         <!-- display a table of recruits -->
 
