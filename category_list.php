@@ -17,8 +17,6 @@ include('includes/header.php');
     
     <form class="form-control" style = "text-align: center; display: inline-block" action="add_category.php" method="post"
           id="add_category_form">
-          <p><a class="btn btn-dark" style = "text-align: center; display: inline-block"  href="index.php">Homepage</a></p>
-
         <label>Name:</label>
         <input type="input" name="name">
         <input class="btn btn-dark" id="add_category_button" type="submit" value="Add">

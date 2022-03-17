@@ -17,7 +17,7 @@
 		
 			<div class="col-md-8 offset-md-2 info">
 				<h1 class="text-center">Ukraine Military</h1>
-				<p class="text-main">
+				<p class="text-center">
         “There is no flag large enough to cover the shame of killing innocent people.”
 				</p>
 				<a href="index.php" class="btn btn-md text-center">GET STARTED</a>
