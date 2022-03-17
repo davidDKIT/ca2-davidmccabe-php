@@ -41,6 +41,7 @@ include('includes/header.php');
         </tr>
         <?php endforeach; ?>
     </table>
+    <a href="index.php"> <button class="btn btn-outline-danger">Cancel</button></a>
     <br>
     <br>
     <?php

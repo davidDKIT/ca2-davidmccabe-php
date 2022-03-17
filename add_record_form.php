@@ -14,9 +14,9 @@ $statement->closeCursor();
   include('includes/header.php');
   ?>
   <h1>Add Recruit</h1>
-  
+
   <form action="add_record.php" method="post" enctype="multipart/form-data" id="add_record_form">
-  <!-- <p><a class="btn btn-dark" href="index.php">View Homepage</a></p> -->
+    <!-- <p><a class="btn btn-dark" href="index.php">View Homepage</a></p> -->
     <div class="form-group">
       <label for="exampleFormControlInput1">Category:</label>
       <select class="form-control" id="exampleFormControlInput1" name="category_id">
@@ -50,11 +50,10 @@ $statement->closeCursor();
       <br>
     </div>
     <label>&nbsp;</label>
-    <a href="main.php"> <button class="btn btn-outline-danger">Cancel</button></a>
     <input class="btn btn-dark" type="submit" value="Add Recruit">
     <br>
   </form>
-  
+  <a href="index.php"> <button class="btn btn-outline-danger">Cancel</button></a>
   <?php
   include('includes/footer.php');
   ?>

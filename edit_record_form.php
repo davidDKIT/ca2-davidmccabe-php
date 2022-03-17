@@ -76,6 +76,7 @@ $statement->closeCursor();
               <input class="form-control" id="exampleFormControlTextarea1" type="submit" value="Save Changes">
               <br>
        </form>
+       <a href="index.php"> <button class="btn btn-outline-danger">Cancel</button></a>
        <p><a href="index.php">View Homepage</a></p>
        <?php
        include('includes/footer.php');

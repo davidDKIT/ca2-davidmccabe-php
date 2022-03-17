@@ -4,7 +4,7 @@ define("DB_HOST", "localhost");
 define("DB_NAME", "D00239311");
 define("DB_CHARSET", "utf8");
 define("DB_USER", "D00239311");
-define("DB_PASSWORD", "tJZniwda");
+define("DB_PASSWORD", "TKJKbRa2");
 
 // (B) CONNECT TO DATABASE
 try {

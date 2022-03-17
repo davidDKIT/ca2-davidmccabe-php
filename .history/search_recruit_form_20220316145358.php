@@ -1,14 +1,4 @@
 <?php include('includes/header.php');     ?>
-<?php
-// (B) PROCESS SEARCH WHEN FORM SUBMITTED
-if (isset($_POST["search"])) {
-  // (B1) SEARCH FOR RECRUITS
-  require "search_recruit.php";
-  if (count($results) > 0) { foreach ($results as $r) {
-  }} else { echo "No results found"; }
-}
-  
-?>
 <table>
     <tr>
         <th scope="col">Image</th>

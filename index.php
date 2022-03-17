@@ -113,7 +113,6 @@ $statement3->closeCursor();
                 </div>
             </div>
         </div>
-        <script src="validation.js"></script>
         <h2><?php echo $category_name; ?></h2>
         <?php
         include('includes/footer.php');

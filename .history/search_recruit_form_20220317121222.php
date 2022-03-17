@@ -2,7 +2,7 @@
 <?php
 // (B) PROCESS SEARCH WHEN FORM SUBMITTED
 if (isset($_POST["search"])) {
-  // (B1) SEARCH FOR RECRUITS
+  // (B1) SEARCH FOR USERS
   require "search_recruit.php";
   if (count($results) > 0) { foreach ($results as $r) {
   }} else { echo "No results found"; }
